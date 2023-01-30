@@ -1,25 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Card from "./components/Card";
+import RatingCard from "./components/RatingCard";
+import ThankyouCard from "./components/ThankyouCard";
 
 function App() {
+  const [showThankCard, setShowThankCard] = React.useState<boolean>(false);
+  const [rating, setRating] = React.useState<number>(0);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Card>
+      <>
+        {showThankCard ? (
+          <ThankyouCard rating={rating} />
+        ) : (
+          <RatingCard
+            rating={rating}
+            setRating={setRating}
+            showThankCard={showThankCard}
+            setShowThankCard={setShowThankCard}
+          />
+        )}
+      </>
+    </Card>
   );
 }
 

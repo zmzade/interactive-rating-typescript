@@ -1,4 +1,3 @@
-import React from "react";
 import Card from "./Card";
 import thankyouImg from "../images/illustration-thank-you.svg";
 import "./ThankyouCard.css";
@@ -9,7 +8,7 @@ type ThankyouCardProps = {
 const ThankyouCard = ({ rating }: ThankyouCardProps) => {
   return (
     <Card>
-      <div className="container">
+      <div className="thank-container">
         <div className="thankImg-container">
           <img src={thankyouImg} alt="thank you" />
         </div>

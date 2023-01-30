@@ -1,13 +1,12 @@
 .card {
-  width: 400px;
-  height: 400px;
+  width: 25rem;
+  height: 25rem;
   background-color: hsl(212, 21%, 14%);
   border-radius: 1.25rem;
-  padding: 2rem;
 }
 
-@media only screen and (min-width: 375px) {
+@media only screen and (max-width: 376px) {
   .card {
-    width: 350px;
+    width: 20rem;
   }
 }

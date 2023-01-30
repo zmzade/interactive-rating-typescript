@@ -1,7 +1,8 @@
-.container {
+.thank-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2rem;
 }
 .thankImg-container {
   display: flex;
@@ -37,6 +38,7 @@
   text-align: center;
   line-height: 1.4rem;
   font-size: 0.9rem;
+  padding: 0.5rem;
 }
 
 p.text {

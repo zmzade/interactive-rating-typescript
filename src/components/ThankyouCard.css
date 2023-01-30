@@ -44,3 +44,9 @@
 p.text {
   text-align: center;
 }
+
+@media only screen and (max-width: 376px) {
+  .thankCard-container {
+    padding: 1rem;
+  }
+}

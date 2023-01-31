@@ -27,10 +27,15 @@ const RatingCard = ({
   const [stars, setStars] = React.useState(ratingStars);
 
   const handleSelect = (id: number) => {
-    const starlist = stars.map((star) =>
-      star.id === id ? { ...star, selected: !star.selected } : star
+    const starList = stars.map((star) =>
+      star.id !== id && star.selected
+        ? { ...star, selected: false }
+        : star.id === id
+        ? { ...star, selected: !star.selected }
+        : star
     );
-    setStars(starlist);
+
+    setStars(starList);
   };
 
   const handleSubmit = () => {

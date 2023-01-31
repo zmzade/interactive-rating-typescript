@@ -46,7 +46,7 @@ const RatingCard = ({
         </div>
 
         <h2 className="title"> How did we do?</h2>
-        <p className="text">
+        <p style={{ textAlign: "start" }} className="text">
           Please let us know how we did with your support request. All feedback
           is appreciated to help us improve our offering!
         </p>

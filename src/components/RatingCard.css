@@ -18,9 +18,8 @@
 }
 
 h2.title {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  display: block;
+  text-align: start;
 }
 
 .text {
@@ -29,10 +28,8 @@ h2.title {
   line-height: 1.4rem;
   margin-bottom: 1.5rem;
 }
-
 p.text {
-  display: block;
-  text-align: left;
+  padding-left: 0;
 }
 
 .ratingStar-container {

@@ -29,7 +29,7 @@ const RatingCard = ({
   const handleSelect = (id: number) => {
     const starList = stars.map((star) =>
       star.id !== id && star.selected
-        ? { ...star, selected: false }
+        ? { ...star, selected: !star.selected }
         : star.id === id
         ? { ...star, selected: !star.selected }
         : star

@@ -49,4 +49,7 @@ p.text {
   .thankCard-container {
     padding: 1rem;
   }
+  .message {
+    width: 90%;
+  }
 }

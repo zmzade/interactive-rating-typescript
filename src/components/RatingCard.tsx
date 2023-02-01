@@ -25,6 +25,7 @@ const RatingCard = ({
   setShowThankCard,
 }: RatingCardProps) => {
   const [stars, setStars] = React.useState(ratingStars);
+  const [id, setId] = React.useState<number>(0);
 
   const handleSelect = (id: number) => {
     const starList = stars.map((star) =>
@@ -34,12 +35,15 @@ const RatingCard = ({
         ? { ...star, selected: !star.selected }
         : star
     );
-
     setStars(starList);
   };
 
   const handleSubmit = () => {
-    if (!rating) return;
+    const starSelected = stars.filter(
+      (star) => star.id === id && star.selected
+    );
+
+    if (starSelected.length === 0) return;
     setShowThankCard(true);
   };
 
@@ -64,6 +68,7 @@ const RatingCard = ({
               onClick={() => {
                 handleSelect(star.id);
                 setRating(star.id);
+                setId(star.id);
               }}
             >
               {star.id}

@@ -6,6 +6,7 @@ import ThankyouCard from "./components/ThankyouCard";
 function App() {
   const [showThankCard, setShowThankCard] = React.useState<boolean>(false);
   const [rating, setRating] = React.useState<number>(0);
+
   return (
     <Card>
       <>

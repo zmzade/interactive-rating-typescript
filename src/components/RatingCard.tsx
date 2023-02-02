@@ -43,42 +43,40 @@ const RatingCard = ({
       (star) => star.id === id && star.selected
     );
 
-    if (starSelected.length === 0) return;
+    if (!starSelected.length) return;
     setShowThankCard(true);
   };
 
   return (
     <Card>
-      <div className="ratingCard-container">
-        <div className="star-container">
-          <img src={starImg} alt="star" />
-        </div>
-
-        <h2 className="title"> How did we do?</h2>
-        <p style={{ textAlign: "start" }} className="text">
-          Please let us know how we did with your support request. All feedback
-          is appreciated to help us improve our offering!
-        </p>
-
-        <div className="ratingStar-container">
-          {stars.map((star) => (
-            <div
-              key={star.id}
-              className={star.selected ? "rating-star selected" : "rating-star"}
-              onClick={() => {
-                handleSelect(star.id);
-                setRating(star.id);
-                setId(star.id);
-              }}
-            >
-              {star.id}
-            </div>
-          ))}
-        </div>
-        <button className="rating-btn" onClick={handleSubmit}>
-          Submit
-        </button>
+      <div className="star-container">
+        <img src={starImg} alt="star" />
       </div>
+
+      <h2 className="rating-title"> How did we do?</h2>
+      <p className="rating-text">
+        Please let us know how we did with your support request. All feedback is
+        appreciated to help us improve our offering!
+      </p>
+
+      <div className="ratingStar-container">
+        {stars.map((star) => (
+          <div
+            key={star.id}
+            className={star.selected ? "rating-star selected" : "rating-star"}
+            onClick={() => {
+              handleSelect(star.id);
+              setRating(star.id);
+              setId(star.id);
+            }}
+          >
+            {star.id}
+          </div>
+        ))}
+      </div>
+      <button className="rating-btn" onClick={handleSubmit}>
+        Submit
+      </button>
     </Card>
   );
 };
